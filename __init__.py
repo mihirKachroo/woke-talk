@@ -4,6 +4,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_googlemaps import GoogleMaps
 
 
 # init SQLAlchemy so we can use it later in our models
@@ -13,6 +14,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'secret-key-goes-here' # it is used by Flask and extensions to keep data safe
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite' #it is the path where the SQLite database file will be saved
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # deactivate Flask-SQLAlchemy track modifications
+    
     db.init_app(app) # Initialiaze sqlite database
     # The login manager contains the code that lets your application and Flask-Login work together
     login_manager = LoginManager() # Create a Login Manager instance
@@ -30,4 +32,6 @@ def create_app():
     # blueprint for non-auth parts of app
     from main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+    GoogleMaps(app)
+
     return app
