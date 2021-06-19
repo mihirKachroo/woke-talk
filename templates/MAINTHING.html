@@ -1,0 +1,128 @@
+{% extends "base.html" %} {% block content %}
+<div style="top: 0" class="container-fluid">
+    <div style="float: left; width: 50%; padding: 10px">
+        <h1 class="title">Flask Login Example</h1>
+    </div>
+    <div style="float: left; width: 50%; padding: 10px; overflow: auto;">
+        <img src="{{url_for('static', filename='background.png')}}" alt="Forest" style="width: 100%; height: 100%" />
+    </div>
+
+    <div class="w3-container has-text-left">
+        <h2>Upcoming Movies</h2>
+        <ul class="w3-ul">
+            <li class="w3-bar">
+                <span onclick="this.parentElement.style.display='none'"
+                    class="w3-bar-item w3-button w3-orange w3-right">Order</span>
+                <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
+                    <div style="float: left; font-size: 30px;
+  width: 70%;">
+                        30
+                    </div>
+                    <div style="float: left;
+  width: 30%;">Sat. Jul.</div>
+                </div>
+                <div class="w3-bar-item">
+                    <span class="w3-large">Venom 2 / </span>
+                    <span>MovieWatcher Center</span>
+                </div>
+            </li>
+
+            <li class="w3-bar">
+                <span onclick="this.parentElement.style.display='none'"
+                    class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Order</span>
+                <img src="img_avatar5.png" class="w3-bar-item w3-circle w3-hide-small" style="width: 85px" />
+                <div class="w3-bar-item">
+                    <span class="w3-large">FAST AND FURIOUS 9 / </span>
+                    <span>MovieWatcher Center</span>
+                </div>
+            </li>
+
+            <li class="w3-bar">
+                <span onclick="this.parentElement.style.display='none'"
+                    class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Order</span>
+                <img src="img_avatar6.png" class="w3-bar-item w3-circle w3-hide-small" style="width: 85px" />
+                <div class="w3-bar-item">
+                    <span class="w3-large">Luca / </span>
+                    <span>MovieWatcher Center</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Carousel Example</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <iframe width="100%" height="550" src="https://www.youtube.com/embed/_qyw6LC5pnE">
+                    </iframe>
+                </div>
+
+                <div class="item">
+                    <iframe width="100%" height="550" src="https://www.youtube.com/embed/0hgHY9k-44U">
+                    </iframe>
+                </div>
+
+                <div class="item">
+                    <iframe width="100%" height="550" src="https://www.youtube.com/embed/Baf2vMpd_wA">
+                    </iframe>
+                </div>
+
+                <div class="item">
+                    <iframe width="100%" height="550" src="https://www.youtube.com/embed/fyUbXVCysUM">
+                    </iframe>
+                </div>
+
+                <div class="item">
+                    <iframe width="100%" height="550" src="https://www.youtube.com/embed/rrwBnlYOp4g">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div style="position: relative;background-color:#f7f7f7; width: 100vw; text-align: center;">
+        <img src="{{url_for('static', filename='footerMovieImage.png')}}" style="width:100%;">
+        <h5 style="font-size: 16px;">More Info</h5>
+        <p>Watch Movie, a Canadian entertainment company headquartered in Toronto, Ontario. We are the most most popular
+            destination for movies, showtimes, tickets, and trailers. Explore the site to order tickets to upcoming
+            movies.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top: 30px">
+        <h5 style="font-style: italic; font-size: 22px;">MovieWatcher</h5>
+        <ul class="grid-container">
+            <li style="display: inline; padding: 10px"><a href="https://www.facebook.com/"><i class="fa fa-facebook"
+                        style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+            <li style="display: inline; padding: 10px"><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"
+                        style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+            <li style="display: inline; padding: 10px"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
+                        style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+
+
+</div>
+{% endblock %}
