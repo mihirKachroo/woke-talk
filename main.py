@@ -22,8 +22,22 @@ def index():
 def profile():
     return render_template('profile.html', name=current_user.name)
 
-@main.route('/movie_page')
+@main.route('/order', methods = ['GET', 'POST'])
+def order():
+    if request.method == 'POST':
+        return redirect(url_for('main.thankyou'))
+    return render_template('order.html')
+
+@main.route('/thankyou')
+def thankyou():
+    return render_template('thankyou.html')
+
+
+@main.route('/movie_page', methods = ['GET', 'POST'])
 def movie_page():
+    if request.method == 'POST':
+        gottenMovieName = request.form.get('movieName')
+        return redirect(url_for('main.order', movieName=gottenMovieName))
     movieName = request.args.get('movieName', None)
     if movieName == "Venom 2":
         movieDate, movieTime, movieSubtitle, movieAbout, movieDirectors, movieWriters, movieStars = "Fri., Jul. 30", "9:00 a.m. – 11:00 a.m. EDT", "Watch new Marvel Venom: Let There Be Carnage", "Sequel to the 2018 film 'Venom'", "Andy Serkis", "Kelly Marcel (screenplay by), Kelly Marcel (story by)", "Tom Hardy, Michelle Williams, Stephen Graham"
@@ -36,6 +50,7 @@ def movie_page():
     elif movieName == "Free Guy":
         movieDate, movieTime, movieSubtitle, movieAbout, movieDirectors, movieWriters, movieStars = "Fri., Jul. 30", "5:00 p.m. – 7:00 p.m. EDT", "Watch new Free Guy comedy and action movie", "A bank teller discovers that he's actually an NPC inside a brutal, open world video game.", "Shawn Levy", "Matt Lieberman (screenplay by), Matt Lieberman (story by)", "Ryan Reynolds, Jodie Comer, Taika Waititi"
     return render_template('movie_page.html', movieName=movieName, movieDate=movieDate, movieTime=movieTime, movieSubtitle=movieSubtitle, movieAbout=movieAbout, movieDirectors=movieDirectors, movieWriters=movieWriters, movieStars=movieStars)
+
 
 app = create_app() # we initialize our flask app using the __init__.py function
 if __name__ == '__main__':

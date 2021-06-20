@@ -1,10 +1,28 @@
 {% extends "base.html" %} {% block content %}
-<div style="top: 0;" class="container-fluid">
+<div style="top: 0; padding-left: 10vw; width: 90vw" class="container">
 
-  <div style="float: left; width: 70%; padding: 5px; text-align: left;">
-    <h1 style="font-family: Garamond">Add Your Details</h1>
+  <div style="float: left; width: 60%; padding: 5px; text-align: left;">
+    <h1 style="font-family: Garamond; margin-bottom: 30px;">Add Your Details</h1>
+    <form action="/order" method="post">
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label for="fname">First Name</label></br>
+          <input type="text" id="fname" name="fname" style="height: 50px; width: 80%">
+        </div>
+        <div class="form-group col-xs-6">
+
+          <label for="lname">Last Name</label></br>
+          <input type="text" id="lname" name="lname" style="width: 80%; height: 50px;">
+        </div>
+      </div>
+      <br>
+      <label for="lname">Email</label><br>
+      <input type="text" id="lname" name="lname" style="width: 90%; height: 50px;"><br><br>
+      <input type="submit" value="Submit"
+        style="margin-top: 15px; background-color: #c58455; border: none; color: white; height: 55px; width: 90%">
+    </form>
   </div>
-  <div style="float: left; width: 30%; padding: 5px; border: 1px solid grey">
+  <div style="float: left; width: 40%; max-width: 400px; padding: 5px; margin-top: 30px; border: 1px solid grey">
     <h3 style="font-family: Apple Chancery">FAST AND FURIOUS 9</h3>
     <hr>
     <h1 style="font-family: Garamond; font-size: 14px; margin-top: 15px;">Jul. 31, 9:00 a.m. – 1:00

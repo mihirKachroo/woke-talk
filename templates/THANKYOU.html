@@ -1,10 +1,13 @@
 {% extends "base.html" %} {% block content %}
-<div style="top: 0">
-    <h1 class="title">Thank you! See you soon</h1>
-    <h4>An email with the event's details was sent to you</h4>
-    <a href="javascript:history.back()">Go Back</a>
-    <div title="Add to Calendar" class="addeventatc">
-        Add to Calendar
+<div style="top: 0" class="container">
+    <h1 style="font-family: Brush Script MT; font-size: 75px; ">Thank you! See you soon</h1>
+    <h4 style="margin-top: 40px; margin-bottom: 55px;">An email with the event's details was sent to you</h4>
+    <a href="javascript:history.back()">
+        <p>Back To Site</p>
+    </a>
+    </br>
+    <div title="Add to Calendar" class="addeventatc" style="margin-top: 15px;  background-color: #c58455;">
+        <p style="color: white; display: inline;">Add to Calendar</p>
         <span class="start">07/02/2021 08:00 AM</span>
         <span class="end">07/02/2021 10:00 AM</span>
         <span class="timezone">America/Los_Angeles</span>
@@ -13,5 +16,16 @@
         <span class="location">Location of the event</span>
     </div>
 
+    <!-- Footer -->
+    <div style="padding-top: 30px; margin-bottom: -20px; text-align: center; background-color: white;">
+        <ul class="grid-container">
+            <li style="display: inline; padding: 10px"><a href="https://www.facebook.com/"><i class="fa fa-facebook"
+                        style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+            <li style="display: inline; padding: 10px"><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"
+                        style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+            <li style="display: inline; padding: 10px"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
+                        style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
 </div>
 {% endblock %}
