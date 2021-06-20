@@ -1,22 +1,221 @@
 {% extends "base.html" %} {% block content %}
-<div style="top: 0">
-  <h1 class="title">Sat., Jul. 31 | MovieWatcher Center</h1>
-  <h1 class="title">FAST AND FURIOUS 9</h1>
-  <h1 class="title">Watch new Fast and Furious 9 starring Vin Diesel and John Cena</h1>
-  <div style="float: left; width: 100%; padding: 5px">
-    <img src="{{url_for('static', filename='background.png')}}" alt="Forest" style="width: 100%" />
-    <h1 class="title">Time & Location</h1>
-    <h3>Time</h3>
-    <h3>Location</h3>
-    <h1 class="title">About the Event</h1>
-    <h3>A bank teller discovers that he's actually an NPC inside a brutal, open world video game.</h3>
-    <h3>Director: Shawn Levy
-      <h3>Writers: Matt Lieberman (screenplay by), Matt Lieberman (story by)</h3>
-      <h3>Stars: Ryan Reynolds, Jodie Comer, Taika Waititi</h3>
+<div style="top: 0" class="container-fluid">
+  <div style="float: left; width: 50%; padding: 10px">
+    <h1 class="title">Flask Login Example</h1>
+  </div>
+  <div style="float: left; width: 50%; padding: 10px; overflow: auto;">
+    <img src="{{url_for('static', filename='background.png')}}" alt="Forest" style="width: 100%; height: 100%" />
+  </div>
+  <h3>Home page</h3>
+
+  <div class="w3-container has-text-left">
+    <h2 style="text-align: center; font-family: Apple Chancery; font-style: italic; font-size: 33px; margin: 75px;">
+      Upcoming Movies
+    </h2>
+    <ul class="w3-ul">
+      <li class="w3-bar">
+        <span class="w3-bar-item w3-right">
+          <form action="/" method="post">
+            <button name="movieName" value="Venom 2" type="submit"
+              style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
+          </form>
+        </span>
+        <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
+          <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
+            30
+          </div>
+          <div style="float: left; width: 30%; font-family: Garamond; font-style: italic; font-size: 14px">Sat. Jul.
+          </div>
+        </div>
+        <div style="margin-left: 120px; padding-bottom: 10px;">
+          <span>
+            <h2 style="font-family: Apple Chancery; font-style: italic; font-size: 27px; display:inline-block">
+              Venom 2 / </h2>
+            <p style="display:inline-block; font-size: 15px;">MovieWatcher Center</p>
+          </span>
+        </div>
+      </li>
+
+      <li class="w3-bar">
+        <span class="w3-bar-item w3-right">
+          <form action="/" method="post">
+            <button name="movieName" value="FAST AND FURIOUS 9" type="submit"
+              style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
+          </form>
+        </span>
+        <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
+          <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
+            30
+          </div>
+          <div style="float: left; width: 30%; font-family: Garamond; font-style: italic; font-size: 14px">Sat. Jul.
+          </div>
+        </div>
+        <div style="margin-left: 120px; padding-bottom: 10px;">
+          <span>
+            <h2 style="font-family: Apple Chancery; font-style: italic; font-size: 27px; display:inline-block">
+              FAST AND FURIOUS 9 / </h2>
+            <p style="display:inline-block; font-size: 15px;">MovieWatcher Center</p>
+          </span>
+        </div>
+      </li>
+
+      <li class="w3-bar">
+        <span class="w3-bar-item w3-right">
+          <form action="/" method="post">
+            <button name="movieName" value="Luca" type="submit"
+              style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
+          </form>
+        </span>
+        <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
+          <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
+            30
+          </div>
+          <div style="float: left; width: 30%; font-family: Garamond; font-style: italic; font-size: 14px">Sat. Jul.
+          </div>
+        </div>
+        <div style="margin-left: 120px; padding-bottom: 10px;">
+          <span>
+            <h2 style="font-family: Apple Chancery; font-style: italic; font-size: 27px; display:inline-block">
+              Luca / </h2>
+            <p style="display:inline-block; font-size: 15px;">MovieWatcher Center</p>
+          </span>
+        </div>
+      </li>
+
+      <li class="w3-bar">
+        <span class="w3-bar-item w3-right">
+          <form action="/" method="post">
+            <button name="movieName" value="A Quiet Place 2" type="submit"
+              style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
+          </form>
+        </span>
+        <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
+          <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
+            30
+          </div>
+          <div style="float: left; width: 30%; font-family: Garamond; font-style: italic; font-size: 14px">Sat. Jul.
+          </div>
+        </div>
+        <div style="margin-left: 120px; padding-bottom: 10px;">
+          <span>
+            <h2 style="font-family: Apple Chancery; font-style: italic; font-size: 27px; display:inline-block">
+              A Quiet Place 2 / </h2>
+            <p style="display:inline-block; font-size: 15px;">MovieWatcher Center</p>
+          </span>
+        </div>
+      </li>
+
+      <li class="w3-bar">
+        <span class="w3-bar-item w3-right">
+          <form action="/" method="post">
+            <button name="movieName" value="Free Guy" type="submit"
+              style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
+          </form>
+        </span>
+        <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
+          <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
+            30
+          </div>
+          <div style="float: left; width: 30%; font-family: Garamond; font-style: italic; font-size: 14px">Sat. Jul.
+          </div>
+        </div>
+        <div style="margin-left: 120px; padding-bottom: 10px;">
+          <span>
+            <h2 style="font-family: Apple Chancery; font-style: italic; font-size: 27px; display:inline-block">
+              Free Guy / </h2>
+            <p style="display:inline-block; font-size: 15px;">MovieWatcher Center</p>
+          </span>
+        </div>
+      </li>
+
+    </ul>
   </div>
 
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.2997840406333!2d-79.71378868454356!3d43.55863607912463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b418a28a8d2a3%3A0x47dbf068950a408d!2sErin%20Mills%20Town%20Centre!5e0!3m2!1sen!2sca!4v1623800860621!5m2!1sen!2sca"
-    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <div>
+    <h2>Carousel Example</h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/_qyw6LC5pnE">
+          </iframe>
+          <div class="carousel-caption">
+            <p>FilmSelect Trailer</p>
+            <h3
+              style="font-family: Garamond; font-style: italic; font-size: 20px; margin-top: -4px; padding-bottom: 10px;">
+              FAST AND FURIOUS 9 Trailer (2021)</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/0hgHY9k-44U">
+          </iframe>
+        </div>
+
+        <div class="item">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/Baf2vMpd_wA">
+          </iframe>
+        </div>
+
+        <div class="item">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/fyUbXVCysUM">
+          </iframe>
+        </div>
+
+        <div class="item">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/rrwBnlYOp4g">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div
+    style="position: relative; align-content:center; width: 100vw; margin-left: -30px; margin-right: -30px; background-color:#f7f7f7; text-align: center;">
+    <img src="{{url_for('static', filename='footerMovieImage.png')}}" style="width:100%;">
+    <h5 style="font-family: Avanta Garde; font-size: 20px; margin-top: 70px;">More Info</h5>
+    <div style="width: 75%; margin: 0 auto; padding-top: 30px; padding-bottom: 120px;">
+      <p style="font-family: Helvetica;">Watch Movie, a Canadian entertainment company headquartered in Toronto,
+        Ontario.
+        We are the most most popular
+        destination for movies, showtimes, tickets, and trailers. Explore the site to order tickets to upcoming
+        movies.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top: 50px; margin-bottom: 20px; text-align: center;">
+    <h5 style="font-family: Garamond; font-style: italic; font-size: 25px; margin-bottom: 30px;">MovieWatcher</h5>
+    <ul class="grid-container">
+      <li style="display: inline; padding: 10px"><a href="https://www.facebook.com/"><i class="fa fa-facebook"
+            style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+      <li style="display: inline; padding: 10px"><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"
+            style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+      <li style="display: inline; padding: 10px"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
+            style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+
+
 </div>
 {% endblock %}
