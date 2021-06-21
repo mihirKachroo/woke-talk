@@ -1,15 +1,19 @@
 {% extends "base.html" %} {% block content %}
 <div style="top: 0" class="container-fluid">
-  <div style="float: left; width: 50%; padding: 10px">
-    <h1 class="title">Flask Login Example</h1>
+  <div style="padding-left: 10%; padding-right: 10%; padding-top: 50px; padding-bottom: 400px;">
+    <div style="float: left; width: 50%; padding: 10px; text-align: left;">
+      <h1 style="margin-top: 225px; font-weight: 700; font-family: Apple Chancery; font-style: italic; font-size: 73px">
+        MovieWatcher</h1>
+      <h3>Want To Watch Some Movies?</h3>
+    </div>
+    <div style="float: left; width: 50%; padding: 10px; overflow: auto;">
+      <img src="{{url_for('static', filename='background.png')}}" alt="Forest"
+        style="width: 100%; height: 600px; object-fit: cover; object-position: 50% 0" />
+    </div>
   </div>
-  <div style="float: left; width: 50%; padding: 10px; overflow: auto;">
-    <img src="{{url_for('static', filename='background.png')}}" alt="Forest" style="width: 100%; height: 100%" />
-  </div>
-  <h3>Home page</h3>
-
   <div class="w3-container has-text-left">
-    <h2 style="text-align: center; font-family: Apple Chancery; font-style: italic; font-size: 33px; margin: 75px;">
+    <h2
+      style="text-align: center; font-family: Apple Chancery; font-style: italic; font-size: 33px; margin-top: 175px; margin-bottom: 100;">
       Upcoming Movies
     </h2>
     <ul class="w3-ul">
@@ -131,8 +135,7 @@
     </ul>
   </div>
 
-  <div>
-    <h2>Carousel Example</h2>
+  <div style="margin-top: 100px">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -146,7 +149,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <iframe width="100%" height="550" src="https://www.youtube.com/embed/_qyw6LC5pnE">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/fEE4RO-_jug">
           </iframe>
           <div class="carousel-caption">
             <p>FilmSelect Trailer</p>
@@ -159,21 +162,45 @@
         <div class="item">
           <iframe width="100%" height="550" src="https://www.youtube.com/embed/0hgHY9k-44U">
           </iframe>
+          <div class="carousel-caption">
+            <p>FilmSelect Trailer</p>
+            <h3
+              style="font-family: Garamond; font-style: italic; font-size: 20px; margin-top: -4px; padding-bottom: 10px;">
+              Luca Trailer (2021)</h3>
+          </div>
         </div>
 
         <div class="item">
           <iframe width="100%" height="550" src="https://www.youtube.com/embed/Baf2vMpd_wA">
           </iframe>
+          <div class="carousel-caption">
+            <p>FilmSelect Trailer</p>
+            <h3
+              style="font-family: Garamond; font-style: italic; font-size: 20px; margin-top: -4px; padding-bottom: 10px;">
+              A Quiet Place Part 2 Trailer (2021)</h3>
+          </div>
         </div>
 
         <div class="item">
-          <iframe width="100%" height="550" src="https://www.youtube.com/embed/fyUbXVCysUM">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/JORN2hkXLyM">
           </iframe>
+          <div class="carousel-caption">
+            <p>FilmSelect Trailer</p>
+            <h3
+              style="font-family: Garamond; font-style: italic; font-size: 20px; margin-top: -4px; padding-bottom: 10px;">
+              Free Guy Trailer (2021)</h3>
+          </div>
         </div>
 
         <div class="item">
-          <iframe width="100%" height="550" src="https://www.youtube.com/embed/rrwBnlYOp4g">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/-ezfi6FQ8Ds">
           </iframe>
+          <div class="carousel-caption">
+            <p>FilmSelect Trailer</p>
+            <h3
+              style="font-family: Garamond; font-style: italic; font-size: 20px; margin-top: -4px; padding-bottom: 10px;">
+              Venom 2 (2021)</h3>
+          </div>
         </div>
       </div>
 
@@ -190,7 +217,7 @@
   </div>
 
   <div
-    style="position: relative; align-content:center; width: 100vw; margin-left: -30px; margin-right: -30px; background-color:#f7f7f7; text-align: center;">
+    style="position: relative; align-content:center; width: 100vw; padding-top: 100px; margin-left: -30px; margin-right: -30px; background-color:#f7f7f7; text-align: center;">
     <img src="{{url_for('static', filename='footerMovieImage.png')}}" style="width:100%;">
     <h5 style="font-family: Avanta Garde; font-size: 20px; margin-top: 70px;">More Info</h5>
     <div style="width: 75%; margin: 0 auto; padding-top: 30px; padding-bottom: 120px;">
