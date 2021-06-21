@@ -7,7 +7,7 @@ from flask_login import login_required, current_user
 from __init__ import create_app, db
 
 ########################################################################################
-# our main blueprint
+# main blueprint
 main = Blueprint('main', __name__)
 
 @main.route('/', methods = ['GET', 'POST']) # home page that return 'index'
