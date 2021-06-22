@@ -1,16 +1,10 @@
----------------Folder project name
-├── **init**.py # setup your app
-├── main.py # the non-auth routes for your app
-├── auth.py # the auth routes for your app
-├── models.py # your user model
-├── db.sqlite # your database
-└── templates
-├── base.html # contains common layout and links
-├── index.html # show the home page
-├── login.html # show the login form
-├── profile.html # show the profile page
-└── signup.html # show the signup form
+'''
+Student: Mihir
+Teacher: Mr. Ghorvei
+Date: June 22, 2021
+Program: MovieWatcher
+'''
 
----------------How To Run It
+How to Run Code:
 pip install -r requirements.txt
 python main.py

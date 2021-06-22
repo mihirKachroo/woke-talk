@@ -1,10 +1,13 @@
-{% extends "base.html" %}
-
-{% block content %}
-<div class="container" style="margin-top: -100px;">
-    <div class="column is-4 is-offset-6">
+<!-- Login page used to log user into the flask app -->
+{% extends "base.html" %}{% block content %}
+<!-- Inherits base.html skeleton and adds body to it -->
+<div style="position:absolute; left:0; top: 200px; width: 100vw;">
+    <div style="margin: 0 auto; width: 500px;">
+        <!-- Login title -->
         <h3 class="title">Login</h3>
+        <!-- Box that holds login inputs -->
         <div class="box">
+            <!-- Displays error message if user doesn't exist in database or there is an input problem -->
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             <div class="notification is-danger">
@@ -12,24 +15,28 @@
             </div>
             {% endif %}
             {% endwith %}
+            <!-- Form that sends post request to login endpoint which will then lead the user to home page or sign up page -->
             <form method="POST" action="/login">
+                <!-- Asks user for email -->
                 <div class="field">
                     <div class="control">
                         <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
                     </div>
                 </div>
-
+                <!-- Asks user for password -->
                 <div class="field">
                     <div class="control">
                         <input class="input is-large" type="password" name="password" placeholder="Your Password">
                     </div>
                 </div>
+                <!-- Remember me button that will let flask store user session in cache -->
                 <div class="field">
                     <label class="checkbox">
                         <input type="checkbox">
                         Remember me
                     </label>
                 </div>
+                <!-- Submit button -->
                 <button class="button is-block is-info is-large is-fullwidth">Login</button>
             </form>
         </div>

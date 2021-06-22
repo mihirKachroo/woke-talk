@@ -1,29 +1,41 @@
+<!-- Default home page that the user will initially land on -->
 {% extends "base.html" %} {% block content %}
+<!-- Inherits base.html skeleton and adds body to it -->
 <div style="top: 0" class="container-fluid">
+  <!-- opening header with image and text split 50/50 -->
   <div style="padding-left: 10%; padding-right: 10%; padding-top: 50px; padding-bottom: 400px;">
+    <!-- text that shows up on left side -->
     <div style="float: left; width: 50%; padding: 10px; text-align: left;">
       <h1 style="margin-top: 225px; font-weight: 700; font-family: Apple Chancery; font-style: italic; font-size: 73px">
         MovieWatcher</h1>
       <h3>Want To Watch Some Movies?</h3>
     </div>
+    <!-- image that shows up on right side -->
     <div style="float: left; width: 50%; padding: 10px; overflow: auto;">
       <img src="{{url_for('static', filename='background.png')}}" alt="Forest"
         style="width: 100%; height: 600px; object-fit: cover; object-position: 50% 0" />
     </div>
   </div>
+
+  <!-- Shows list of upcoming movies -->
   <div class="w3-container has-text-left" style="width: 80%; margin-left: auto; margin-right: auto;">
     <h2
       style="text-align: center; font-family: Apple Chancery; font-style: italic; font-size: 33px; margin-top: 175px; margin-bottom: 100;">
       Upcoming Movies
     </h2>
+    <!-- Creates unordered list with w3schools css -->
     <ul class="w3-ul">
+
+      <!-- Shows Venom 2 movie list item -->
       <li class="w3-bar">
         <span class="w3-bar-item w3-right">
+          <!-- Form that sends post request to default endpoint which will then lead the user to movie page -->
           <form action="/" method="post">
             <button name="movieName" value="Venom 2" type="submit"
               style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
           </form>
         </span>
+        <!-- Shows date, location and movie name text on list item -->
         <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
           <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
             30
@@ -40,13 +52,16 @@
         </div>
       </li>
 
+      <!-- Shows Fast 9 movie list item -->
       <li class="w3-bar">
         <span class="w3-bar-item w3-right">
+          <!-- Form that sends post request to default endpoint which will then lead the user to movie page -->
           <form action="/" method="post">
             <button name="movieName" value="FAST AND FURIOUS 9" type="submit"
               style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
           </form>
         </span>
+        <!-- Shows date, location and movie name text on list item -->
         <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
           <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
             30
@@ -63,13 +78,16 @@
         </div>
       </li>
 
+      <!-- Shows Luca movie list item -->
       <li class="w3-bar">
         <span class="w3-bar-item w3-right">
+          <!-- Form that sends post request to default endpoint which will then lead the user to movie page -->
           <form action="/" method="post">
             <button name="movieName" value="Luca" type="submit"
               style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
           </form>
         </span>
+        <!-- Shows date, location and movie name text on list item -->
         <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
           <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
             30
@@ -86,13 +104,16 @@
         </div>
       </li>
 
+      <!-- Shows A Quiet Place 2 movie list item -->
       <li class="w3-bar">
         <span class="w3-bar-item w3-right">
+          <!-- Form that sends post request to default endpoint which will then lead the user to movie page -->
           <form action="/" method="post">
             <button name="movieName" value="A Quiet Place 2" type="submit"
               style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
           </form>
         </span>
+        <!-- Shows date, location and movie name text on list item -->
         <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
           <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
             30
@@ -109,13 +130,16 @@
         </div>
       </li>
 
+      <!-- Shows Free guy movie list item -->
       <li class="w3-bar">
         <span class="w3-bar-item w3-right">
+          <!-- Form that sends post request to default endpoint which will then lead the user to movie page -->
           <form action="/" method="post">
             <button name="movieName" value="Free Guy" type="submit"
               style="background-color: #c58455; border: none; color: white; height: 45px; width: 105px">Order</button>
           </form>
         </span>
+        <!-- Shows date, location and movie name text on list item -->
         <div class="w3-bar-item w3-circle w3-hide-small row" style="width: 105px">
           <div style="float: left; font-size: 35px; width: 70%; font-family: Garamond; font-style: italic;">
             30
@@ -135,7 +159,9 @@
     </ul>
   </div>
 
-  <div style="margin-top: 100px; padding-bottom: 100px; width: 83%; margin-left:auto; margin-right:auto;">
+  <!-- Creates carousel of youtube movie trailers -->
+  <div
+    style="margin-top: 100px; padding-bottom: 100px; width: 83%; margin-left:auto; margin-right:auto; margin-top: 250px;">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -148,6 +174,7 @@
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
+        <!-- Creates fast 9 trailer item -->
         <div class="item active">
           <iframe width="100%" height="650" src="https://www.youtube.com/embed/fEE4RO-_jug">
           </iframe>
@@ -160,6 +187,8 @@
         </div>
 
         <div class="item">
+          <!-- Creates Luca trailer item -->
+
           <iframe width="100%" height="650" src="https://www.youtube.com/embed/0hgHY9k-44U">
           </iframe>
           <div class="carousel-caption">
@@ -171,6 +200,8 @@
         </div>
 
         <div class="item">
+          <!-- Creates Queit Place 2 trailer item -->
+
           <iframe width="100%" height="650" src="https://www.youtube.com/embed/Baf2vMpd_wA">
           </iframe>
           <div class="carousel-caption">
@@ -182,6 +213,8 @@
         </div>
 
         <div class="item">
+          <!-- Creates Free Guy trailer item -->
+
           <iframe width="100%" height="650" src="https://www.youtube.com/embed/JORN2hkXLyM">
           </iframe>
           <div class="carousel-caption">
@@ -193,6 +226,8 @@
         </div>
 
         <div class="item">
+          <!-- Creates Venom 2 trailer item -->
+
           <iframe width="100%" height="650" src="https://www.youtube.com/embed/-ezfi6FQ8Ds">
           </iframe>
           <div class="carousel-caption">
@@ -216,10 +251,12 @@
     </div>
   </div>
 
+  <!-- Image before footer with about description -->
   <div
     style="position: relative; align-content:center; width: 100vw; padding-top: 100px; margin-left: -30px; margin-right: -30px; background-color:#f7f7f7; text-align: center;">
     <img src="{{url_for('static', filename='footerMovieImage.png')}}" style="width:80%;">
     <h5 style="font-family: Avanta Garde; font-size: 20px; margin-top: 70px;">More Info</h5>
+    <!-- About description -->
     <div style="width: 75%; margin: 0 auto; padding-top: 30px; padding-bottom: 120px;">
       <p style="font-family: Helvetica;">Watch Movie, a Canadian entertainment company headquartered in Toronto,
         Ontario.
@@ -233,11 +270,15 @@
   <!-- Footer -->
   <div style="margin-top: 50px; margin-bottom: 20px; text-align: center;">
     <h5 style="font-family: Garamond; font-style: italic; font-size: 25px; margin-bottom: 30px;">MovieWatcher</h5>
+    <!-- Orders social icons into row -->
     <ul class="grid-container">
+      <!-- Creates link icon for facebook -->
       <li style="display: inline; padding: 10px"><a href="https://www.facebook.com/"><i class="fa fa-facebook"
             style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+      <!-- Creates link icon for twitter -->
       <li style="display: inline; padding: 10px"><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"
             style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+      <!-- Creates link icon for linkedin -->
       <li style="display: inline; padding: 10px"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
             style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
     </ul>

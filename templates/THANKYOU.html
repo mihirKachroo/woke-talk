@@ -1,28 +1,37 @@
 {% extends "base.html" %} {% block content %}
+<!-- Inherits base.html skeleton and adds body to it -->
 <div style="position:absolute; left:0; top: 30%; width: 100vw;">
+    <!-- Thank You Title -->
     <h1 style="font-family: Brush Script MT; font-size: 75px; ">Thank you! See you soon</h1>
     <h4 style="margin-top: 40px; margin-bottom: 55px;">An email with the event's details was sent to you</h4>
     <a href="/">
         <p>Back To Site</p>
     </a>
     </br>
+    <!-- Button that uses addevent api to add movie to user's calender -->
     <div title="Add to Calendar" class="addeventatc" style="margin-top: 15px;  background-color: #c58455;">
         <p style="color: white; display: inline;">Add to Calendar</p>
-        <span class="start">07/02/2021 08:00 AM</span>
-        <span class="end">07/02/2021 10:00 AM</span>
+        <!-- Sets information about calender event -->
+        <span class="start">07/30/2021 09:00 AM</span>
+        <span class="end">07/30/2021 11:00 AM</span>
         <span class="timezone">America/Los_Angeles</span>
         <span class="title">MovieWatcher</span>
-        <span class="description">Watching a movie at MovieWatch Center</span>
+        <span class="description">Watching {{movieName}} at MovieWatch Center</span>
         <span class="location">5100 Erin Mills Pkwy, Mississauga, ON L5M 4Z5</span>
     </div>
 
     <!-- Footer -->
     <div style="padding-top: 30px; margin-bottom: -20px; text-align: center; background-color: white;">
+        <h5 style="font-family: Garamond; font-style: italic; font-size: 25px; margin-bottom: 30px;">MovieWatcher</h5>
+        <!-- Orders social icons into row -->
         <ul class="grid-container">
+            <!-- Creates link icon for facebook -->
             <li style="display: inline; padding: 10px"><a href="https://www.facebook.com/"><i class="fa fa-facebook"
                         style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+            <!-- Creates link icon for twitter -->
             <li style="display: inline; padding: 10px"><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"
                         style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+            <!-- Creates link icon for linkedin -->
             <li style="display: inline; padding: 10px"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
                         style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
         </ul>

@@ -1,29 +1,39 @@
+<!-- Movie page that the user will go to after clicking on movie -->
 {% extends "base.html" %} {% block content %}
 <div style="position:absolute; left:0; top: 130px; width: 100vw; background-color:#f9f2ee;">
+
+  <!-- Opening header about movie -->
   <div style="padding-bottom: 300px;">
+    <!-- Title and date information about movie -->
     <h1 style="font-family: Garamond; font-size: 24px; margin-top: 75px; margin-bottom: 10px;">{{movieDate}} |
       MovieWatcher Center</h1>
     <h1 style="font-family: Apple Chancery; font-style: italic; font-size: 50px; margin-bottom: 10px;">{{movieName}}
     </h1>
+    <!-- Movie subtitle -->
     <h1 style="font-family: Garamond; font-size: 20px; margin-top: 20px;">{{movieSubtitle}}</h1>
+    <!-- Form that sends post request to movie page endpoint which will then lead the user to ordering page -->
     <form action="/movie_page" method="post">
-      <input type="hidden" id="movieTime" name="movieTime" value="3487">
-
+      <input type="hidden" id="movieTime" name="movieTime" value="{{movieTime}}">
       <button name="movieName" value="{{movieName}}" type=" submit"
         style="margin-top: 40px; background-color: #c58455; border: none; color: white; height: 55px; width: 150px;">Order</button>
     </form>
   </div>
+
+  <!-- About event section -->
   <div
     style="float: left; width: 100%; padding-left: 20%; padding-top: 200px; background-color: white; text-align: left;">
+    <!-- Image of movie -->
     <img src="{{url_for('static', filename=movieImage)}}" alt="Forest"
       style="width: 70%; height: 500px; margin-top: -450px;" />
 
+    <!-- Shows movie time and location -->
     <h3 style="font-family: Apple Chancery; font-style: italic; font-size: 30px; margin-top: 75px;">Time & Location
     </h3>
     <p style="font-family: Garamond; font-size: 22px; margin-top: 20px;">{{movieDate}}, {{movieTime}}</p>
     <p style="font-family: Garamond; font-size: 22px; ">MovieWatcher Center, Mississauga, ON, Canada
     </p>
 
+    <!-- Movie plot and cast information -->
     <h3 style="font-family: Apple Chancery; font-style: italic; font-size: 30px; margin-top: 50px;">About the Event</h3>
     <p style="font-family: Garamond; font-size: 22px; margin-top: 20px;">{{movieAbout}}</p>
     <p style="font-family: Garamond; font-size: 21px; ">
@@ -34,11 +44,13 @@
       Writers: {{movieStars}}
     </p>
 
+    <!-- Form that sends post request to movie page endpoint which will then lead the user to ordering page -->
     <form action="/movie_page" method="post">
       <button name="movieName" value="A Quiet Place 2" type="submit"
         style="margin-top: 50px; margin-bottom: 30px; background-color: #c58455; border: none; color: white; height: 55px; width: 150px;">Order</button>
     </form>
 
+    <!-- Loads google maps of movie theater's lcoation -->
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.2997840406333!2d-79.71378868454356!3d43.55863607912463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b418a28a8d2a3%3A0x47dbf068950a408d!2sErin%20Mills%20Town%20Centre!5e0!3m2!1sen!2sca!4v1623800860621!5m2!1sen!2sca"
       width="80%" height="400" style="border:0; margin-top: 30px; margin-bottom: 75px;" allowfullscreen=""
@@ -48,11 +60,15 @@
   <!-- Footer -->
   <div style="margin-bottom: -20px; text-align: center; background-color: white;">
     <h5 style="font-family: Garamond; font-style: italic; font-size: 25px; margin-bottom: 30px;">MovieWatcher</h5>
+    <!-- Orders social icons into row -->
     <ul class="grid-container">
+      <!-- Creates link icon for facebook -->
       <li style="display: inline; padding: 10px"><a href="https://www.facebook.com/"><i class="fa fa-facebook"
             style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+      <!-- Creates link icon for twitter -->
       <li style="display: inline; padding: 10px"><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"
             style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
+      <!-- Creates link icon for linkedin -->
       <li style="display: inline; padding: 10px"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"
             style="color: black; font-size: 1.3em;" aria-hidden="true"></i></a></li>
     </ul>

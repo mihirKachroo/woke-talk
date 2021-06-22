@@ -11,7 +11,7 @@ from __init__ import db
 auth = Blueprint('auth', __name__) # create a Blueprint object that we name 'auth'
 
 @auth.route('/login', methods=['GET', 'POST']) # define login page path
-def login(): # define login page fucntion
+def login(): # define login page function
     if request.method=='GET': # if the request is a GET we return the login page
         return render_template('login.html')
     else: # if the request is POST the we check if the user exist and with te right password
@@ -53,5 +53,5 @@ def signup(): # define the sign up function
 @auth.route('/logout') # define logout path
 @login_required
 def logout(): #define the logout function
-    logout_user()
+    logout_user() # logs user out
     return redirect(url_for('main.index'))

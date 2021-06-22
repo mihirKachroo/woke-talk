@@ -1,21 +1,32 @@
+<!-- Ordering page that the user will go to after clicking on movie. Also sends email to user with ticket. -->
 {% extends "base.html" %} {% block content %}
+<!-- Inherits base.html skeleton and adds body to it -->
 <div style="top: 0; padding-left: 10vw; width: 90vw;">
+  <!-- Form that sends post request to ordering endpoint which will then lead the user to thank you page if everything goes right -->
   <form action="/order" method="post">
-
+    <!-- Input with information about movie name -->
+    <input type="hidden" id="movieName" name="movieName" value="{{movieName}}">
+    <!-- Form that asks users about personal and credit card information -->
     <div style="float: left; width: 60%; padding: 5px; text-align: left;">
       <h1 style="font-family: Garamond; margin-bottom: 30px;">Add Your Details</h1>
+      <!-- Creates two columns in a row -->
       <div class="row">
+        <!-- Asks user for name -->
+
         <div class="form-group col-xs-6">
           <label for="fname">Name</label></br>
           <input required type="text" id="fname" name="fname" style="height: 50px; width: 80%">
         </div>
+        <!-- Asks user for email -->
         <div class="form-group col-xs-6">
           <label for="email">Email</label><br>
           <input required type="text" id="email" name="email" style="width: 80%; height: 50px;">
         </div>
       </div>
       <br>
+      <!-- Asks user for payment information -->
       <h3>Payment</h3>
+      <!-- Shows list of accepted cards -->
       <label for="fname">Accepted Cards</label>
       <div class="icon-container">
         <i class="fa fa-cc-visa" style="color:navy;"></i>
@@ -23,41 +34,50 @@
         <i class="fa fa-cc-mastercard" style="color:red;"></i>
         <i class="fa fa-cc-discover" style="color:orange;"></i>
       </div>
+
+      <!-- Asks user for name on card -->
       <label for="cname">Name on Card</label><br>
       <input required type="text" id="cname" name="cname" placeholder="John Doe" style="width: 90%; height: 50px;">
       <br><br>
+      <!-- Asks user for credit card number -->
       <label for="cnumber">Credit Card Number</label><br>
       <input required type="text" id="cnumber" name="cnumber" placeholder="1111-2222-3333-4444"
         style="width: 90%; height: 50px;"> <br><br>
+      <!-- Creates two columns in a row -->
       <div class="row">
+        <!-- Asks user for card exp date -->
         <div class="form-group col-xs-6">
           <label for="cdate">Exp Date</label><br>
           <input required type="text" id="cdate" name="cdate" placeholder="September 2018"
             style="width: 80%; height: 50px;">
         </div>
+        <!-- Asks user for card cvv -->
         <div class="form-group col-xs-6">
           <label for="cvv">CVV</label><br>
           <input required type="text" id="cvv" name="cvv" placeholder="352" style="width: 80%; height: 50px;">
         </div>
       </div>
+      <!-- Submit button -->
       <input required type="submit" value="Submit"
         style="margin-top: 15px; background-color: #c58455; border: none; color: white; height: 55px; width: 90%">
-
-
     </div>
+
+    <!-- Right columns -->
     <div style="float: left; width: 40%; max-width: 400px; padding: 5px; margin-top: 30px;">
       <div style="border: 1px solid grey">
+        <!-- Shows movie name and time -->
         <h3 style="font-family: Apple Chancery">{{movieName}}</h3>
         <hr>
-        <h1 style="font-family: Garamond; font-size: 14px; margin-top: 15px;">Jul. 31, 9:00 a.m. – 1:00
-          p.m. EDT
+        <h1 style="font-family: Garamond; font-size: 14px; margin-top: 15px;">Jul. 30, {{movieTime}}
         </h1>
         <h1 style="font-family: Garamond; font-size: 14px; margin-bottom: 10px;">MovieWatcher Center
         </h1>
       </div>
+      <!-- Asks user for how many tickets they want to purchase -->
       <div style="text-align: left; margin-top: 50px;">
         <label>Price Per Ticket: </label> $5 <br><br>
         <label for="numOfTickets">Number of Tickets:</label>
+        <!-- Creates input stepper -->
         <input required type="number" value="1" id="numOfTickets" name="numOfTickets" step="1">
       </div>
     </div>

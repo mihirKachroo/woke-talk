@@ -2,39 +2,45 @@
 <html>
 
 <head>
+    <!-- defines metadata about an HTML document and how page will be used by browser -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flask Auth Example</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}">
+    <!-- Sets title of web page -->
+    <title>MovieWatcher</title>
+    <!-- defines the relationship between the current document and an external resource -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!-- imports unique fonts that will be used -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- imports bulma frontend component for creating frontend -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!-- imports w3schools styles for css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- imports bootstrap styles for css -->
+    <!-- Embeds a client-side script to load javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- imports jquery scripts -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- imports bootstrap scripts -->
     <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
-
+    <!-- imports addevent scripts for calender -->
 </head>
 
-<body>
-    <section class="hero is-fullheight" style="background-color:#ffffff;">
+<!-- Main body where code is loaded -->
 
+<body>
+    <!-- Creates navigation bar -->
+    <section class="hero is-fullheight" style="background-color:#ffffff;">
+        <!-- Navigation bar -->
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
-
+                    <!-- Creates home, login, sign up and logout button -->
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-end">
                             <a href="{{ url_for('main.index') }}" class="navbar-item">
                                 Home
                             </a>
-                            {% if current_user.is_authenticated %}
-                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
-                                Profile
-                            </a>
-                            {% endif %}
+                            <!-- Shows login and signup buttons if user is logged out -->
                             {% if not current_user.is_authenticated %}
                             <a href="{{ url_for('auth.login') }}" class="navbar-item">
                                 Login
@@ -43,6 +49,7 @@
                                 Sign Up
                             </a>
                             {% endif %}
+                            <!-- Shows logout button if user is logged in -->
                             {% if current_user.is_authenticated %}
                             <a href="{{ url_for('auth.logout') }}" class="navbar-item">
                                 Logout
@@ -55,7 +62,7 @@
             </nav>
         </div>
         <hr style="height:1.1px; margin: auto; width:90%; border-width:0; color:black; background-color:black">
-
+        <!-- Loads body from other html pages that inherit the base.html skeleton -->
         <div class="hero-body">
             <div class="has-text-centered">
                 {% block content %}{% endblock %}
