@@ -1,36 +1,67 @@
 {% extends "base.html" %} {% block content %}
-<div style="top: 0; padding-left: 10vw; width: 90vw" class="container">
+<div style="top: 0; padding-left: 10vw; width: 90vw;">
+  <form action="/order" method="post">
 
-  <div style="float: left; width: 60%; padding: 5px; text-align: left;">
-    <h1 style="font-family: Garamond; margin-bottom: 30px;">Add Your Details</h1>
-    <form action="/order" method="post">
+    <div style="float: left; width: 60%; padding: 5px; text-align: left;">
+      <h1 style="font-family: Garamond; margin-bottom: 30px;">Add Your Details</h1>
       <div class="row">
         <div class="form-group col-xs-6">
-          <label for="fname">First Name</label></br>
-          <input type="text" id="fname" name="fname" style="height: 50px; width: 80%">
+          <label for="fname">Name</label></br>
+          <input required type="text" id="fname" name="fname" style="height: 50px; width: 80%">
         </div>
         <div class="form-group col-xs-6">
-
-          <label for="lname">Last Name</label></br>
-          <input type="text" id="lname" name="lname" style="width: 80%; height: 50px;">
+          <label for="email">Email</label><br>
+          <input required type="text" id="email" name="email" style="width: 80%; height: 50px;">
         </div>
       </div>
       <br>
-      <label for="lname">Email</label><br>
-      <input type="text" id="lname" name="lname" style="width: 90%; height: 50px;"><br><br>
-      <input type="submit" value="Submit"
+      <h3>Payment</h3>
+      <label for="fname">Accepted Cards</label>
+      <div class="icon-container">
+        <i class="fa fa-cc-visa" style="color:navy;"></i>
+        <i class="fa fa-cc-amex" style="color:blue;"></i>
+        <i class="fa fa-cc-mastercard" style="color:red;"></i>
+        <i class="fa fa-cc-discover" style="color:orange;"></i>
+      </div>
+      <label for="cname">Name on Card</label><br>
+      <input required type="text" id="cname" name="cname" placeholder="John Doe" style="width: 90%; height: 50px;">
+      <br><br>
+      <label for="cnumber">Credit Card Number</label><br>
+      <input required type="text" id="cnumber" name="cnumber" placeholder="1111-2222-3333-4444"
+        style="width: 90%; height: 50px;"> <br><br>
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label for="cdate">Exp Date</label><br>
+          <input required type="text" id="cdate" name="cdate" placeholder="September 2018"
+            style="width: 80%; height: 50px;">
+        </div>
+        <div class="form-group col-xs-6">
+          <label for="cvv">CVV</label><br>
+          <input required type="text" id="cvv" name="cvv" placeholder="352" style="width: 80%; height: 50px;">
+        </div>
+      </div>
+      <input required type="submit" value="Submit"
         style="margin-top: 15px; background-color: #c58455; border: none; color: white; height: 55px; width: 90%">
-    </form>
-  </div>
-  <div style="float: left; width: 40%; max-width: 400px; padding: 5px; margin-top: 30px; border: 1px solid grey">
-    <h3 style="font-family: Apple Chancery">FAST AND FURIOUS 9</h3>
-    <hr>
-    <h1 style="font-family: Garamond; font-size: 14px; margin-top: 15px;">Jul. 31, 9:00 a.m. – 1:00
-      p.m. EDT
-    </h1>
-    <h1 style="font-family: Garamond; font-size: 14px; margin-bottom: 10px;">MovieWatcher Center
-    </h1>
-  </div>
+
+
+    </div>
+    <div style="float: left; width: 40%; max-width: 400px; padding: 5px; margin-top: 30px;">
+      <div style="border: 1px solid grey">
+        <h3 style="font-family: Apple Chancery">{{movieName}}</h3>
+        <hr>
+        <h1 style="font-family: Garamond; font-size: 14px; margin-top: 15px;">Jul. 31, 9:00 a.m. – 1:00
+          p.m. EDT
+        </h1>
+        <h1 style="font-family: Garamond; font-size: 14px; margin-bottom: 10px;">MovieWatcher Center
+        </h1>
+      </div>
+      <div style="text-align: left; margin-top: 50px;">
+        <label>Price Per Ticket: </label> $5 <br><br>
+        <label for="numOfTickets">Number of Tickets:</label>
+        <input required type="number" value="1" id="numOfTickets" name="numOfTickets" step="1">
+      </div>
+    </div>
+  </form>
 
 </div>
 {% endblock %}
