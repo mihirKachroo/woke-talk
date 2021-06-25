@@ -1,9 +1,4 @@
-'''
-Student: Mihir
-Teacher: Mr. Ghorvei
-Date: June 22, 2021
-Program: MovieWatcher
-'''
+# MovieWatcher
 
 How to Run Code:
 
